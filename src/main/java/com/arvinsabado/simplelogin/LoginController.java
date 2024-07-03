@@ -6,6 +6,7 @@ package com.arvinsabado.simplelogin;
 
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.Statement;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -36,6 +37,7 @@ public class LoginController {
     
     private JDBCConnect jDBCConnect = new JDBCConnect();
     private Connection connection = null;
+    private Statement statement = null;
     
     public void createNewAccount(ActionEvent event) throws IOException{
         System.out.println("username: " + usernameField.getText() + " password: " + passwordField.getText());

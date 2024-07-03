@@ -11,13 +11,16 @@ import java.sql.SQLException;
 public class JDBCConnect {
     
     private Connection connection;
+    private final String user = "root";
+    private final String password = "";
     
     public Connection getConnection() {
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/simplelogin", "root", "password");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/simplelogin", user, password);
             System.out.println("Connection status: " + connection.isValid(0));
         }
         catch (SQLException e) {
+            
             e.printStackTrace();
         }
         
